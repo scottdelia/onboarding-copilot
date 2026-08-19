@@ -42,6 +42,8 @@ field values with zero confident-wrong** — which answers a different question
 Full write-up, including the five defects the evals caught and the limits of
 each number: **[docs/FINDINGS.md](docs/FINDINGS.md)**.
 
+**Live demo:** https://scottdelia.github.io/onboarding-copilot/
+
 Part of an [applied-AI portfolio](https://scottdelia.github.io/innovation-office/).
 
 ---
