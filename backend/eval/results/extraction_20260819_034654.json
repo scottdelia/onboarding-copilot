@@ -1,0 +1,92 @@
+{
+  "model": "claude-opus-5",
+  "documents": 2,
+  "per_field": {
+    "full_name": {
+      "correct": 2,
+      "null": 0,
+      "wrong": 0
+    },
+    "npn": {
+      "correct": 2,
+      "null": 0,
+      "wrong": 0
+    },
+    "license_number": {
+      "correct": 2,
+      "null": 0,
+      "wrong": 0
+    },
+    "resident_state": {
+      "correct": 2,
+      "null": 0,
+      "wrong": 0
+    },
+    "license_type": {
+      "correct": 2,
+      "null": 0,
+      "wrong": 0
+    },
+    "issue_date": {
+      "correct": 2,
+      "null": 0,
+      "wrong": 0
+    },
+    "expiration_date": {
+      "correct": 2,
+      "null": 0,
+      "wrong": 0
+    },
+    "lines_of_authority": {
+      "correct": 0,
+      "null": 0,
+      "wrong": 2
+    }
+  },
+  "accuracy_pct": 87.5,
+  "null_pct": 0.0,
+  "wrong_pct": 12.5,
+  "danger_confident_wrong_pct": 0.0,
+  "criterion_threshold_pct": 2.0,
+  "criterion_fires": false,
+  "evidence_dropped": 0,
+  "cost_usd": 0.0654,
+  "rows": [
+    {
+      "agent_id": "a01",
+      "outcomes": {
+        "full_name": "correct",
+        "npn": "correct",
+        "license_number": "correct",
+        "resident_state": "correct",
+        "license_type": "correct",
+        "issue_date": "correct",
+        "expiration_date": "correct",
+        "lines_of_authority": "wrong"
+      },
+      "evidence_dropped": [],
+      "latency_ms": 83744,
+      "hazards": [
+        "date_format"
+      ]
+    },
+    {
+      "agent_id": "a02",
+      "outcomes": {
+        "full_name": "correct",
+        "npn": "correct",
+        "license_number": "correct",
+        "resident_state": "correct",
+        "license_type": "correct",
+        "issue_date": "correct",
+        "expiration_date": "correct",
+        "lines_of_authority": "wrong"
+      },
+      "evidence_dropped": [],
+      "latency_ms": 7721,
+      "hazards": [
+        "date_format"
+      ]
+    }
+  ]
+}

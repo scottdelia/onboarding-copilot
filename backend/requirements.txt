@@ -1,0 +1,17 @@
+# Pinned by hand; there is no compile step and no requirements.in. To upgrade
+# one, change it here and re-run the evals -- a silent behaviour change will not
+# fail an import.
+
+# --- LLM ---
+anthropic==0.122.0
+pydantic==2.11.9
+
+# --- Documents ---
+# pymupdf reads the rendered text layer back, which is what makes the
+# extraction ground truth independent of what the model reports seeing.
+pymupdf==1.26.4
+# Dev only: renders the synthetic licences.
+reportlab==4.4.4
+
+# --- Security tooling ---
+detect-secrets==1.5.0
