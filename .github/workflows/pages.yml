@@ -1,0 +1,59 @@
+# Builds the site and publishes it to GitHub Pages on every push to main.
+#
+# There is no server to deploy. This application answers no query -- it shows a
+# fixed cohort and functions of it -- so everything it displays is precomputed
+# by tools/build_site_data.py into frontend/public/data/site.json, which is
+# committed as site content. Regenerate it with:
+#
+#   python tools/generate_cohort.py && python tools/build_site_data.py
+name: Deploy to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time. Not cancel-in-progress: a half-finished deploy that gets
+# cancelled can leave the live page mid-swap.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          # Vite 8 requires Node 20.19+ or 22.12+.
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      # `ci` rather than `install`: it installs exactly the lockfile and fails
+      # on a mismatch, so a deploy cannot silently ship a different dependency
+      # tree than the one that was tested.
+      - run: npm ci
+        working-directory: frontend
+      # Runs `tsc -b` first, so a type error fails the deploy instead of
+      # publishing a bundle that was never typechecked.
+      - run: npm run build
+        working-directory: frontend
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: frontend/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
