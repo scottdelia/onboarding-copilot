@@ -1,0 +1,276 @@
+{
+  "model": "claude-opus-5",
+  "documents": 12,
+  "per_field": {
+    "full_name": {
+      "correct": 12,
+      "null": 0,
+      "wrong": 0
+    },
+    "npn": {
+      "correct": 12,
+      "null": 0,
+      "wrong": 0
+    },
+    "license_number": {
+      "correct": 12,
+      "null": 0,
+      "wrong": 0
+    },
+    "resident_state": {
+      "correct": 12,
+      "null": 0,
+      "wrong": 0
+    },
+    "license_type": {
+      "correct": 12,
+      "null": 0,
+      "wrong": 0
+    },
+    "issue_date": {
+      "correct": 12,
+      "null": 0,
+      "wrong": 0
+    },
+    "expiration_date": {
+      "correct": 12,
+      "null": 0,
+      "wrong": 0
+    },
+    "lines_of_authority": {
+      "correct": 12,
+      "null": 0,
+      "wrong": 0
+    }
+  },
+  "accuracy_pct": 100.0,
+  "null_pct": 0.0,
+  "wrong_pct": 0.0,
+  "danger_confident_wrong_pct": 0.0,
+  "criterion_threshold_pct": 2.0,
+  "criterion_fires": false,
+  "evidence_dropped": 0,
+  "cost_usd": 0.3938,
+  "rows": [
+    {
+      "agent_id": "a01",
+      "outcomes": {
+        "full_name": "correct",
+        "npn": "correct",
+        "license_number": "correct",
+        "resident_state": "correct",
+        "license_type": "correct",
+        "issue_date": "correct",
+        "expiration_date": "correct",
+        "lines_of_authority": "correct"
+      },
+      "evidence_dropped": [],
+      "latency_ms": 7522,
+      "hazards": [
+        "date_format"
+      ]
+    },
+    {
+      "agent_id": "a02",
+      "outcomes": {
+        "full_name": "correct",
+        "npn": "correct",
+        "license_number": "correct",
+        "resident_state": "correct",
+        "license_type": "correct",
+        "issue_date": "correct",
+        "expiration_date": "correct",
+        "lines_of_authority": "correct"
+      },
+      "evidence_dropped": [],
+      "latency_ms": 7988,
+      "hazards": [
+        "date_format"
+      ]
+    },
+    {
+      "agent_id": "a03",
+      "outcomes": {
+        "full_name": "correct",
+        "npn": "correct",
+        "license_number": "correct",
+        "resident_state": "correct",
+        "license_type": "correct",
+        "issue_date": "correct",
+        "expiration_date": "correct",
+        "lines_of_authority": "correct"
+      },
+      "evidence_dropped": [],
+      "latency_ms": 7803,
+      "hazards": [
+        "date_format",
+        "state_written_in_full"
+      ]
+    },
+    {
+      "agent_id": "a04",
+      "outcomes": {
+        "full_name": "correct",
+        "npn": "correct",
+        "license_number": "correct",
+        "resident_state": "correct",
+        "license_type": "correct",
+        "issue_date": "correct",
+        "expiration_date": "correct",
+        "lines_of_authority": "correct"
+      },
+      "evidence_dropped": [],
+      "latency_ms": 6855,
+      "hazards": [
+        "date_format"
+      ]
+    },
+    {
+      "agent_id": "a05",
+      "outcomes": {
+        "full_name": "correct",
+        "npn": "correct",
+        "license_number": "correct",
+        "resident_state": "correct",
+        "license_type": "correct",
+        "issue_date": "correct",
+        "expiration_date": "correct",
+        "lines_of_authority": "correct"
+      },
+      "evidence_dropped": [],
+      "latency_ms": 6873,
+      "hazards": [
+        "date_format"
+      ]
+    },
+    {
+      "agent_id": "a06",
+      "outcomes": {
+        "full_name": "correct",
+        "npn": "correct",
+        "license_number": "correct",
+        "resident_state": "correct",
+        "license_type": "correct",
+        "issue_date": "correct",
+        "expiration_date": "correct",
+        "lines_of_authority": "correct"
+      },
+      "evidence_dropped": [],
+      "latency_ms": 6782,
+      "hazards": [
+        "watermark_over_npn",
+        "date_format",
+        "npn_leading_zero"
+      ]
+    },
+    {
+      "agent_id": "a07",
+      "outcomes": {
+        "full_name": "correct",
+        "npn": "correct",
+        "license_number": "correct",
+        "resident_state": "correct",
+        "license_type": "correct",
+        "issue_date": "correct",
+        "expiration_date": "correct",
+        "lines_of_authority": "correct"
+      },
+      "evidence_dropped": [],
+      "latency_ms": 6854,
+      "hazards": [
+        "date_format"
+      ]
+    },
+    {
+      "agent_id": "a08",
+      "outcomes": {
+        "full_name": "correct",
+        "npn": "correct",
+        "license_number": "correct",
+        "resident_state": "correct",
+        "license_type": "correct",
+        "issue_date": "correct",
+        "expiration_date": "correct",
+        "lines_of_authority": "correct"
+      },
+      "evidence_dropped": [],
+      "latency_ms": 6731,
+      "hazards": [
+        "date_format"
+      ]
+    },
+    {
+      "agent_id": "a09",
+      "outcomes": {
+        "full_name": "correct",
+        "npn": "correct",
+        "license_number": "correct",
+        "resident_state": "correct",
+        "license_type": "correct",
+        "issue_date": "correct",
+        "expiration_date": "correct",
+        "lines_of_authority": "correct"
+      },
+      "evidence_dropped": [],
+      "latency_ms": 7149,
+      "hazards": [
+        "date_format"
+      ]
+    },
+    {
+      "agent_id": "a10",
+      "outcomes": {
+        "full_name": "correct",
+        "npn": "correct",
+        "license_number": "correct",
+        "resident_state": "correct",
+        "license_type": "correct",
+        "issue_date": "correct",
+        "expiration_date": "correct",
+        "lines_of_authority": "correct"
+      },
+      "evidence_dropped": [],
+      "latency_ms": 7128,
+      "hazards": [
+        "date_format"
+      ]
+    },
+    {
+      "agent_id": "a11",
+      "outcomes": {
+        "full_name": "correct",
+        "npn": "correct",
+        "license_number": "correct",
+        "resident_state": "correct",
+        "license_type": "correct",
+        "issue_date": "correct",
+        "expiration_date": "correct",
+        "lines_of_authority": "correct"
+      },
+      "evidence_dropped": [],
+      "latency_ms": 7330,
+      "hazards": [
+        "date_format"
+      ]
+    },
+    {
+      "agent_id": "a12",
+      "outcomes": {
+        "full_name": "correct",
+        "npn": "correct",
+        "license_number": "correct",
+        "resident_state": "correct",
+        "license_type": "correct",
+        "issue_date": "correct",
+        "expiration_date": "correct",
+        "lines_of_authority": "correct"
+      },
+      "evidence_dropped": [],
+      "latency_ms": 6862,
+      "hazards": [
+        "date_format",
+        "state_written_in_full"
+      ]
+    }
+  ]
+}

@@ -63,6 +63,20 @@ BlockerReason = Literal[
 
 LineOfAuthority = Literal["life", "health", "variable_life", "property", "casualty"]
 
+# How each line is printed on a licence. Lives here rather than in the renderer
+# because the extraction eval scores against what was *printed*, not against the
+# internal code -- an extractor that returns "life" for a page reading
+# "Accident & Health" has normalised, and normalisation is the failure the
+# corpus exists to catch. Scoring the codes instead marked every correct
+# extraction wrong, which is how this was found.
+LINE_LABELS: dict[str, str] = {
+    "life": "Life",
+    "health": "Accident & Health",
+    "variable_life": "Variable Life & Variable Annuity",
+    "property": "Property",
+    "casualty": "Casualty",
+}
+
 
 @dataclass(frozen=True)
 class StepDefinition:

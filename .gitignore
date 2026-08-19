@@ -40,3 +40,5 @@ Thumbs.db
 
 # Generated licence documents. Regenerate with tools/generate_onboarding_corpus.py
 corpus/onboarding/*.pdf
+
+# Smoke runs over a subset are not results. Only full sweeps are committed.

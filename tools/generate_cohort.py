@@ -23,6 +23,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from onboarding_data import (  # noqa: E402
     AGENT_SEEDS,
+    LINE_LABELS,
     CARRIERS_BY_ID,
     COHORT_ANCHOR_ISO,
     STEPS,
@@ -127,6 +128,11 @@ def main() -> None:
                 "state_printed_as": seed.state_printed_as,
                 "license_type": seed.license_type,
                 "lines_of_authority": list(seed.lines_of_authority),
+                # What the renderer actually printed. The extraction eval scores
+                # against this, not against the codes above.
+                "lines_printed_as": [
+                    LINE_LABELS[line] for line in seed.lines_of_authority
+                ],
                 "issue_date": seed.issue_date,
                 "expiration_date": seed.expiration_date,
             },
