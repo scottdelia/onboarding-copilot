@@ -1,0 +1,287 @@
+{
+  "a01": {
+    "planted_gaps": [],
+    "license_fields": {
+      "full_name": "Dana R Whitfield",
+      "npn": "20418877",
+      "license_number": "NC-1884233",
+      "resident_state": "NC",
+      "state_printed_as": "NC",
+      "license_type": "Resident Producer",
+      "lines_of_authority": [
+        "life",
+        "health"
+      ],
+      "issue_date": "03/14/2024",
+      "expiration_date": "03/31/2027"
+    },
+    "hazards": {
+      "watermark_over_npn": false,
+      "date_format": "mm/dd/yyyy",
+      "state_written_in_full": false,
+      "npn_leading_zero": false
+    }
+  },
+  "a02": {
+    "planted_gaps": [],
+    "license_fields": {
+      "full_name": "Marcus A Bell",
+      "npn": "20455310",
+      "license_number": "SC-9920145",
+      "resident_state": "SC",
+      "state_printed_as": "SC",
+      "license_type": "Resident Producer",
+      "lines_of_authority": [
+        "life"
+      ],
+      "issue_date": "01/09/2025",
+      "expiration_date": "01/31/2028"
+    },
+    "hazards": {
+      "watermark_over_npn": false,
+      "date_format": "mm/dd/yyyy",
+      "state_written_in_full": false,
+      "npn_leading_zero": false
+    }
+  },
+  "a03": {
+    "planted_gaps": [
+      "name_match"
+    ],
+    "license_fields": {
+      "full_name": "Patricia N Okonkwo",
+      "npn": "20461902",
+      "license_number": "NC-1902871",
+      "resident_state": "NC",
+      "state_printed_as": "North Carolina",
+      "license_type": "Resident Producer",
+      "lines_of_authority": [
+        "life",
+        "health"
+      ],
+      "issue_date": "06/02/2024",
+      "expiration_date": "06/30/2027"
+    },
+    "hazards": {
+      "watermark_over_npn": false,
+      "date_format": "mm/dd/yyyy",
+      "state_written_in_full": true,
+      "npn_leading_zero": false
+    }
+  },
+  "a04": {
+    "planted_gaps": [
+      "line_of_authority:northstar",
+      "line_of_authority:cardinal"
+    ],
+    "license_fields": {
+      "full_name": "Devon Park",
+      "npn": "20470044",
+      "license_number": "GA-4410882",
+      "resident_state": "GA",
+      "state_printed_as": "GA",
+      "license_type": "Resident Producer",
+      "lines_of_authority": [
+        "health"
+      ],
+      "issue_date": "09/18/2024",
+      "expiration_date": "09/30/2027"
+    },
+    "hazards": {
+      "watermark_over_npn": false,
+      "date_format": "mm/dd/yyyy",
+      "state_written_in_full": false,
+      "npn_leading_zero": false
+    }
+  },
+  "a05": {
+    "planted_gaps": [
+      "license_expired"
+    ],
+    "license_fields": {
+      "full_name": "Renata M Alvarez",
+      "npn": "20483115",
+      "license_number": "FL-7781204",
+      "resident_state": "FL",
+      "state_printed_as": "FL",
+      "license_type": "Resident Producer",
+      "lines_of_authority": [
+        "life",
+        "health"
+      ],
+      "issue_date": "11/05/2021",
+      "expiration_date": "11/30/2024"
+    },
+    "hazards": {
+      "watermark_over_npn": false,
+      "date_format": "mm/dd/yyyy",
+      "state_written_in_full": false,
+      "npn_leading_zero": false
+    }
+  },
+  "a06": {
+    "planted_gaps": [],
+    "license_fields": {
+      "full_name": "Jerome Baptiste",
+      "npn": "0204910",
+      "license_number": "TN-3320981",
+      "resident_state": "TN",
+      "state_printed_as": "TN",
+      "license_type": "Resident Producer",
+      "lines_of_authority": [
+        "life"
+      ],
+      "issue_date": "14-FEB-2025",
+      "expiration_date": "28-FEB-2028"
+    },
+    "hazards": {
+      "watermark_over_npn": true,
+      "date_format": "dd-mmm-yyyy",
+      "state_written_in_full": false,
+      "npn_leading_zero": true
+    }
+  },
+  "a07": {
+    "planted_gaps": [],
+    "license_fields": {
+      "full_name": "Lindsey Corbin",
+      "npn": "20492260",
+      "license_number": "VA-6650117",
+      "resident_state": "VA",
+      "state_printed_as": "VA",
+      "license_type": "Resident Producer",
+      "lines_of_authority": [
+        "life"
+      ],
+      "issue_date": "04/22/2024",
+      "expiration_date": "04/30/2027"
+    },
+    "hazards": {
+      "watermark_over_npn": false,
+      "date_format": "mm/dd/yyyy",
+      "state_written_in_full": false,
+      "npn_leading_zero": false
+    }
+  },
+  "a08": {
+    "planted_gaps": [
+      "aml:northstar",
+      "aml:granite"
+    ],
+    "license_fields": {
+      "full_name": "Aaron Whitlock",
+      "npn": "20501773",
+      "license_number": "TX-2214665",
+      "resident_state": "TX",
+      "state_printed_as": "TX",
+      "license_type": "Resident Producer",
+      "lines_of_authority": [
+        "life"
+      ],
+      "issue_date": "02/08/2025",
+      "expiration_date": "02/28/2028"
+    },
+    "hazards": {
+      "watermark_over_npn": false,
+      "date_format": "mm/dd/yyyy",
+      "state_written_in_full": false,
+      "npn_leading_zero": false
+    }
+  },
+  "a09": {
+    "planted_gaps": [
+      "eo_minimum:granite"
+    ],
+    "license_fields": {
+      "full_name": "Priya Raman",
+      "npn": "20511008",
+      "license_number": "NC-1955402",
+      "resident_state": "NC",
+      "state_printed_as": "NC",
+      "license_type": "Resident Producer",
+      "lines_of_authority": [
+        "life",
+        "health"
+      ],
+      "issue_date": "07/30/2024",
+      "expiration_date": "07/31/2027"
+    },
+    "hazards": {
+      "watermark_over_npn": false,
+      "date_format": "mm/dd/yyyy",
+      "state_written_in_full": false,
+      "npn_leading_zero": false
+    }
+  },
+  "a10": {
+    "planted_gaps": [
+      "appointment_state:meridian"
+    ],
+    "license_fields": {
+      "full_name": "Curtis Nwosu",
+      "npn": "20523641",
+      "license_number": "OH-8810339",
+      "resident_state": "OH",
+      "state_printed_as": "OH",
+      "license_type": "Resident Producer",
+      "lines_of_authority": [
+        "life",
+        "health"
+      ],
+      "issue_date": "10/11/2024",
+      "expiration_date": "10/31/2027"
+    },
+    "hazards": {
+      "watermark_over_npn": false,
+      "date_format": "mm/dd/yyyy",
+      "state_written_in_full": false,
+      "npn_leading_zero": false
+    }
+  },
+  "a11": {
+    "planted_gaps": [],
+    "license_fields": {
+      "full_name": "Sofia Marchetti",
+      "npn": "20530092",
+      "license_number": "NC-1971558",
+      "resident_state": "NC",
+      "state_printed_as": "NC",
+      "license_type": "Resident Producer",
+      "lines_of_authority": [
+        "life",
+        "health",
+        "variable_life"
+      ],
+      "issue_date": "05/16/2024",
+      "expiration_date": "05/31/2027"
+    },
+    "hazards": {
+      "watermark_over_npn": false,
+      "date_format": "mm/dd/yyyy",
+      "state_written_in_full": false,
+      "npn_leading_zero": false
+    }
+  },
+  "a12": {
+    "planted_gaps": [],
+    "license_fields": {
+      "full_name": "Hector Delacroix",
+      "npn": "20544817",
+      "license_number": "SC-9971230",
+      "resident_state": "SC",
+      "state_printed_as": "South Carolina",
+      "license_type": "Resident Producer",
+      "lines_of_authority": [
+        "life"
+      ],
+      "issue_date": "12/03/2024",
+      "expiration_date": "12/31/2027"
+    },
+    "hazards": {
+      "watermark_over_npn": false,
+      "date_format": "mm/dd/yyyy",
+      "state_written_in_full": true,
+      "npn_leading_zero": false
+    }
+  }
+}
