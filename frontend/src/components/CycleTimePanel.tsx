@@ -55,9 +55,9 @@ const SEGMENTS = [
 ] as const;
 
 const LEVER_LABEL: Record<string, string> = {
-  extraction: 'Extraction — a model reads the documents',
-  rule_engine: 'Rule engine — catch defects before submission',
-  nudge: 'Nudge queue — chase idle work',
+  extraction: 'Extraction · a model reads the documents',
+  rule_engine: 'Rule engine · catch defects before submission',
+  nudge: 'Nudge queue · chase idle work',
   all_three: 'All three together',
 };
 
@@ -74,7 +74,7 @@ export function CycleTimePanel({ data }: { data: SiteData }) {
         </h2>
         <p className="mt-1 text-xs text-ink-subtle">
           Mean across {data.cycle_time.cohort_size} agents, along the critical
-          path — steps that ran concurrently are counted once, not twice.
+          path. Steps that ran concurrently are counted once, not twice.
         </p>
       </div>
 
@@ -88,7 +88,7 @@ export function CycleTimePanel({ data }: { data: SiteData }) {
             return (
               <div
                 key={segment.key}
-                title={`${segment.label} — ${share}%`}
+                title={`${segment.label} · ${share}%`}
                 style={
                   {
                     width: `${share}%`,
@@ -129,7 +129,7 @@ export function CycleTimePanel({ data }: { data: SiteData }) {
       {/* The levers, each modelled on its own. Extraction first, because it is
           the one the brief implies and the one the numbers refuse. */}
       <div className="mt-5 border-t border-line">
-        <p className="px-5 pt-4 text-[0.6875rem] font-semibold uppercase tracking-[0.06em] text-ink-faint">
+        <p className="px-5 pt-4 gauge-label">
           What each lever removes from the total
         </p>
         <ul className="px-5 pb-4 pt-2">
@@ -164,26 +164,36 @@ export function CycleTimePanel({ data }: { data: SiteData }) {
         className="tier-rail border-t border-line bg-surface-inset px-5 py-4"
         style={{ '--tier': 'var(--tier-table-rated)' } as CSSProperties}
       >
-        <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.06em] text-ink-faint">
-          Kill criterion, registered before the build
-        </p>
-        <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">
-          Extraction had to remove at least{' '}
-          <span className="tabular font-semibold text-ink">
-            {data.kill_threshold_pct}%
-          </span>{' '}
-          of elapsed time. It removes{' '}
-          <span className="tabular font-semibold text-warn">{extraction}%</span>.{' '}
+        <p className="gauge-label">Kill criterion, registered before the build</p>
+
+        {/* The comparison the criterion turns on, as two readouts rather than
+            as a sentence with the numbers buried in it. Required against
+            delivered is the whole argument, and it should be legible in a
+            glance rather than in a paragraph. */}
+        <div className="mt-3 flex flex-wrap items-end gap-x-10 gap-y-4">
+          <div>
+            <div className="readout readout-md text-ink-muted">
+              {data.kill_threshold_pct}%
+            </div>
+            <p className="gauge-label mt-1">required</p>
+          </div>
+          <div>
+            <div className="readout readout-md text-warn">{extraction}%</div>
+            <p className="gauge-label mt-1">extraction delivers</p>
+          </div>
+          <div>
+            <div className="readout readout-md text-ink">
+              {decomposition.internal_touch_share_pct}%
+            </div>
+            <p className="gauge-label mt-1">someone actually working</p>
+          </div>
+        </div>
+
+        <p className="mt-4 text-sm leading-relaxed text-ink-muted">
           {fires ? (
             <>
               <span className="font-semibold text-ink">The criterion fires.</span>{' '}
-              &ldquo;A model reads the documents and onboarding takes hours&rdquo;
-              is not available at any level of extraction accuracy — because
-              someone actively working is{' '}
-              <span className="tabular font-semibold text-ink">
-                {decomposition.internal_touch_share_pct}%
-              </span>{' '}
-              of the total.
+              No level of extraction accuracy turns these days into hours.
             </>
           ) : (
             <span className="font-semibold text-ink">The criterion holds.</span>
@@ -195,7 +205,7 @@ export function CycleTimePanel({ data }: { data: SiteData }) {
           conclusion, so the assumptions are pushed in the direction that would
           most favour extraction and the result is shown either way. */}
       <div className="border-t border-line px-5 py-4">
-        <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.06em] text-ink-faint">
+        <p className="gauge-label">
           Does it hold if the assumptions are wrong?
         </p>
         <div className="mt-2.5 overflow-x-auto">
@@ -228,9 +238,9 @@ export function CycleTimePanel({ data }: { data: SiteData }) {
         </div>
         <p className="mt-2.5 text-xs leading-relaxed text-ink-subtle">
           Extraction never overtakes the rule engine, at any assumption I can
-          defend. The step durations are plausible rather than observed, and are
-          the first thing worth pushing on — which is why the conclusion is
-          shown surviving them being wrong.
+          defend. Step durations are plausible rather than observed. They are
+          the first thing worth pushing on, which is why the table shows the
+          conclusion surviving them being wrong.
         </p>
       </div>
     </section>

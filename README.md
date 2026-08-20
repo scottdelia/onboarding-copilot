@@ -5,8 +5,8 @@
 > affiliated with any insurance carrier. Nothing here is a licence, evidence of
 > one, or advice.
 
-A bet on the role brief's question — *"an agent onboarding workflow that takes
-days and involves too many manual handoffs. What if it took hours?"* — and the
+A bet on the role brief's question, *"an agent onboarding workflow that takes
+days and involves too many manual handoffs. What if it took hours?"*, and the
 instrument built to test it before building the obvious answer.
 
 **The obvious answer is a model that reads the licensing paperwork. It does not
@@ -36,7 +36,7 @@ The deterministic rule engine removes **22× more**, by catching a packet defect
 before it enters a carrier queue instead of after. It has no model in it.
 
 Extraction was built anyway, against a second criterion, and scores **100% on 96
-field values with zero confident-wrong** — which answers a different question
+field values with zero confident-wrong**, which answers a different question
 (can it auto-populate?) and is a ceiling rather than a forecast.
 
 Full write-up, including the five defects the evals caught and the limits of
@@ -113,9 +113,9 @@ problem and buys something the real records could not: because each licence is
 rendered *from* the structured values, ground truth is exact, and the generator
 re-reads every rendered PDF to confirm each value survived the layout engine.
 
-The corpus carries deliberate hazards — a leading-zero NPN under a watermark, a
+The corpus carries deliberate hazards. A leading-zero NPN under a watermark, a
 `DD-MMM-YYYY` date among `MM/DD/YYYY` ones, states printed in full where the rest
-abbreviate — because twelve identical clean licences would not test an extractor
+abbreviate, because twelve identical clean licences would not test an extractor
 at all.
 
 The tradeoff is stated rather than hidden: these are clean vector PDFs, so the

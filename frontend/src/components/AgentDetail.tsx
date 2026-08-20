@@ -15,7 +15,7 @@ import {
  * --------------------------
  * Steps are coloured by owner, not by status. Running an eye down the rail
  * shows how much of an onboarding belongs to a carrier, a state, or a vendor,
- * and how little of it is ours — which is the finding the whole application
+ * and how little of it is ours, which is the finding the whole application
  * exists to make, restated at the level of a single person.
  *
  * Steps off the critical path are dimmed. They finished while something slower
@@ -110,7 +110,7 @@ export function AgentDetail({ agent }: { agent: Agent }) {
 
       {blocking.length > 0 && (
         <div className="border-b border-line px-5 py-4">
-          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.06em] text-ink-faint">
+          <p className="gauge-label">
             {blocking.length} blocking{' '}
             {blocking.length === 1 ? 'gap' : 'gaps'}, found before submission
           </p>
@@ -124,7 +124,7 @@ export function AgentDetail({ agent }: { agent: Agent }) {
 
       <div className="px-5 py-4">
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.06em] text-ink-faint">
+          <p className="gauge-label">
             Pipeline
           </p>
           <p className="text-xs text-ink-faint">

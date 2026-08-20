@@ -34,12 +34,12 @@ disappointing result being quietly reinterpreted as an encouraging one.
 ## Finding 1: the framing is dead
 
 Every step is split into two quantities that get conflated constantly and behave
-nothing alike. **Touch time** is somebody actively working — software can
+nothing alike. **Touch time** is somebody actively working, software can
 compress it. **Wait time** is the work sitting in somebody else's queue: a state
 department of insurance, a background vendor, a carrier's appointment desk.
 Nothing built here shortens it.
 
-Summed across the cohort *along the critical path* — not as a naive total, since
+Summed across the cohort *along the critical path*, not as a naive total, since
 a background check and a licence lookup run at the same time and adding both
 overstates the timeline badly:
 
@@ -85,7 +85,7 @@ The same data names the alternative. The deterministic rule engine removes
 it enters a carrier queue rather than after. One agent in the cohort carries the
 whole argument: a nickname on the application against a legal name on the
 licence, bounced by a carrier that matches strictly. That single rejected packet
-is **96 of that agent's 493 hours** — 19% of their onboarding, lost to a
+is **96 of that agent's 493 hours**, 19% of their onboarding, lost to a
 one-line defect that a check at submission catches in milliseconds.
 
 The engine that catches it is plain code. `Gap.source` is a one-value `Literal`,
@@ -93,7 +93,7 @@ so the schema itself records that nothing here was model-produced. It scores
 **100% precision and 100% recall** on 8 planted defects across 12 agents, with
 variance reported as an explicit `0.00 (deterministic)`.
 
-That 100% is not a boast — these are set comparisons and date arithmetic, and
+That 100% is not a boast. These are set comparisons and date arithmetic, and
 anything less would be a bug. It is reported next to the model numbers precisely
 because the contrast is the argument: the highest-value component in this bet is
 the one with no model in it.
@@ -105,15 +105,15 @@ the one with no model in it.
 The cycle-time criterion settles whether extraction makes onboarding *faster*.
 It does not settle whether extraction can be trusted to *auto-populate a carrier
 submission*. That is a data-quality question with its own answer, and I built
-the extractor to get it — a kill is more credible when you built the thing than
+the extractor to get it. A kill is more credible when you built the thing than
 when you only modelled it.
 
 A second criterion, registered before running:
 
 > Accuracy alone cannot decide this, because the same accuracy figure means
 > opposite things depending on how it fails. A field returned **null** is a
-> cheap failure — a person reviews it. A field returned as a **confident wrong
-> value** is an expensive one — it posts to a carrier and the packet comes back
+> cheap failure. A person reviews it. A field returned as a **confident wrong
+> value** is an expensive one. It posts to a carrier and the packet comes back
 > days later. **If confident-wrong on the danger fields (NPN, licence number,
 > expiration date) exceeds 2%, auto-population is dead** and extraction ships as
 > a review accelerator with every field surfaced for confirmation.
@@ -132,8 +132,7 @@ Result on 12 documents, 96 field values, `claude-opus-5`:
 
 Every planted hazard survived: the leading-zero NPN under a low-contrast
 watermark, the `DD-MMM-YYYY` date among `MM/DD/YYYY` ones, the states printed in
-full where the rest abbreviate. The leading zero is the one I expected to lose —
-a reader that treats an NPN as a number drops it silently and produces a value
+full where the rest abbreviate. The leading zero is the one I expected to lose, a reader that treats an NPN as a number drops it silently and produces a value
 that still *looks* valid.
 
 **The criterion holds.** Auto-population is viable for these fields, with the
@@ -142,7 +141,7 @@ rest surfaced for review.
 ### Why every field is optional
 
 `LicenseExtraction` declares every field as `str | None`. That is not defensive
-typing — it is the schema encoding of the prompt's most important instruction. A
+typing. It is the schema encoding of the prompt's most important instruction. A
 model with no legal way to say "I cannot read this" produces a confident value
 instead. Making null representable is what makes the ratio measurable at all.
 
@@ -160,7 +159,7 @@ one produced a wrong number rather than a crash, which is the category that
 survives code review.
 
 1. **`_parse_date` upper-cased its format string as well as its value.**
-   `"%m/%d/%Y".upper()` is `"%M/%D/%Y"` — `%M` is minutes and `%D` is not a
+   `"%m/%d/%Y".upper()` is `"%M/%D/%Y"`, `%M` is minutes and `%D` is not a
    directive. Every licence in the corpus parsed as unreadable, and all twelve
    agents were reported with an unreadable expiry. Recall looked fine; precision
    was 29%.
@@ -179,8 +178,8 @@ survives code review.
 **The scorer is verified by a negative control.** A perfect score is exactly
 when a scorer deserves least trust: one that always returns 100% and one that is
 correct produce identical output on a clean run. Seven planted errors must be
-caught — a wrong NPN, a stripped leading zero, a normalised state, a reformatted
-date, a null, a dropped line of authority — and an unchanged value must still
+caught. A wrong NPN, a stripped leading zero, a normalised state, a reformatted
+date, a null, a dropped line of authority, and an unchanged value must still
 pass. Run it with `python -m eval.negative_control`.
 
 ---
@@ -188,8 +187,7 @@ pass. Run it with `python -m eval.negative_control`.
 ## The cohort
 
 Twelve agents, four carriers, ten pipeline steps, all generated from
-`tools/onboarding_data.py`. Real onboarding records are personnel files —
-names, producer numbers, background results, banking details — and no amount of
+`tools/onboarding_data.py`. Real onboarding records are personnel files, names, producer numbers, background results, banking details, and no amount of
 masking makes them safe for a public demo.
 
 Generating them buys what the real records could not: because each licence is
@@ -226,7 +224,7 @@ rather than assuming it did.
   is my assumption, not an observation.
 - **Carrier requirements from the carriers**, versioned and dated. A requirement
   that changed last quarter against a rule written this quarter produces a
-  confidently wrong "complete" — the same failure mode as a stale underwriting
+  confidently wrong "complete". The same failure mode as a stale underwriting
   guide in the sibling project.
 - **A human in front of extraction regardless of the number.** 100% on twelve
   clean documents does not license unattended posting to a carrier system. The
@@ -240,7 +238,7 @@ rather than assuming it did.
 | | |
 |---|---:|
 | Extraction sweep, 12 documents | **$0.3938** |
-| Cycle-time model and rule engine | **$0.00** — no model calls |
+| Cycle-time model and rule engine | **$0.00**. No model calls |
 | Build hours | Not instrumented |
 
 The two components that produced the finding cost nothing to run, which is the
