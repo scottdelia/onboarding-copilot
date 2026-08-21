@@ -20,10 +20,10 @@ import { AgentDetail } from './components/AgentDetail';
 function Mark() {
   return (
     <svg viewBox="0 0 32 32" aria-hidden className="size-8 shrink-0">
-      <rect width="32" height="32" rx="8" fill="var(--ink)" />
-      <rect x="7" y="8" width="18" height="3.5" rx="1.75" fill="var(--tier-decline)" />
-      <rect x="7" y="14" width="6" height="3.5" rx="1.75" fill="var(--tier-table-rated)" />
-      <rect x="7" y="20" width="3" height="3.5" rx="1.75" fill="var(--tier-preferred-plus)" />
+      <rect width="32" height="32" fill="var(--accent-bright)" />
+      <rect x="7" y="8" width="18" height="3.5" fill="var(--tier-decline)" />
+      <rect x="7" y="14" width="6" height="3.5" fill="var(--tier-table-rated)" />
+      <rect x="7" y="20" width="3" height="3.5" fill="var(--tier-preferred-plus)" />
     </svg>
   );
 }
@@ -133,15 +133,15 @@ export default function App() {
         </div>
       </div>
 
-      <header className="border-b border-line bg-surface">
+      <header className="bg-surface-brand">
         <div className="mx-auto flex max-w-[76rem] items-center justify-between gap-4 px-5 py-3">
           <div className="flex min-w-0 items-center gap-2.5">
             <Mark />
             <div className="min-w-0">
-              <p className="truncate text-sm font-semibold tracking-tight text-ink">
+              <p className="truncate text-sm font-extrabold tracking-tight text-white">
                 Onboarding Copilot
               </p>
-              <p className="truncate text-xs text-ink-subtle">
+              <p className="truncate text-xs text-white/70">
                 Where the days go, and which of them a model can remove
               </p>
             </div>
