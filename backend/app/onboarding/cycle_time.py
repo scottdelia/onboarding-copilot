@@ -402,9 +402,9 @@ def sensitivity(cohort: list[dict]) -> list[dict]:
     results: list[dict] = []
 
     for label, scale in (
-        ("as modelled", 1.0),
-        ("carrier queues halved", 0.5),
-        ("carrier queues at 25%", 0.25),
+        ("my timings are right", 1.0),
+        ("carriers were twice as fast", 0.5),
+        ("carriers were four times as fast", 0.25),
     ):
         scaled = []
         for agent in cohort:

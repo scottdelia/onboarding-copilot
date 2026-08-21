@@ -19,45 +19,45 @@ import type { SiteData } from '../types';
 const SEGMENTS = [
   {
     key: 'external_wait',
-    label: 'External queues',
-    sub: 'carrier · state · vendor',
+    label: 'Waiting on someone else',
+    sub: 'a carrier, the state, a background vendor',
     tier: 'var(--tier-decline)',
     external: true,
   },
   {
     key: 'internal_queue',
-    label: 'Our backlog',
-    sub: 'work waiting on us',
+    label: 'Sitting in our queue',
+    sub: 'ours to do, not started',
     tier: 'var(--tier-table-rated)',
     external: false,
   },
   {
     key: 'rework',
-    label: 'Rework',
-    sub: 'defect caught by a carrier',
+    label: 'Doing it again',
+    sub: 'a carrier sent the paperwork back',
     tier: 'var(--tier-standard)',
     external: false,
   },
   {
     key: 'internal_idle',
-    label: 'Idle',
-    sub: 'actionable, untouched',
+    label: 'Nobody picked it up',
+    sub: 'ready to go, nothing happening',
     tier: 'var(--tier-standard-plus)',
     external: false,
   },
   {
     key: 'internal_touch',
-    label: 'Someone working',
-    sub: 'the only part extraction touches',
+    label: 'Someone actually working',
+    sub: 'the only part AI could ever speed up',
     tier: 'var(--tier-preferred-plus)',
     external: false,
   },
 ] as const;
 
 const LEVER_LABEL: Record<string, string> = {
-  extraction: 'Extraction · a model reads the documents',
-  rule_engine: 'Rule engine · catch defects before submission',
-  nudge: 'Nudge queue · chase idle work',
+  extraction: 'AI reads the documents',
+  rule_engine: 'A checklist catches mistakes before submitting',
+  nudge: 'Chase the work nobody picked up',
   all_three: 'All three together',
 };
 
@@ -70,11 +70,11 @@ export function CycleTimePanel({ data }: { data: SiteData }) {
     <section className="card overflow-hidden">
       <div className="border-b border-line px-5 py-4">
         <h2 className="text-sm font-semibold text-ink">
-          Where a {baseline.mean_days}-day onboarding actually goes
+          Where the {baseline.mean_days} days go
         </h2>
         <p className="mt-1 text-xs text-ink-subtle">
-          Mean across {data.cycle_time.cohort_size} agents, along the critical
-          path. Steps that ran concurrently are counted once, not twice.
+          Averaged over {data.cycle_time.cohort_size} agents. Steps that happen
+          at the same time are counted once, not twice.
         </p>
       </div>
 
@@ -130,7 +130,7 @@ export function CycleTimePanel({ data }: { data: SiteData }) {
           the one the brief implies and the one the numbers refuse. */}
       <div className="mt-5 border-t border-line">
         <p className="px-5 pt-4 gauge-label">
-          What each lever removes from the total
+          How much time each fix would save
         </p>
         <ul className="px-5 pb-4 pt-2">
           {Object.entries(levers).map(([name, lever]) => {
@@ -164,7 +164,7 @@ export function CycleTimePanel({ data }: { data: SiteData }) {
         className="tier-rail border-t border-line bg-surface-inset px-5 py-4"
         style={{ '--tier': 'var(--tier-table-rated)' } as CSSProperties}
       >
-        <p className="gauge-label">Kill criterion, registered before the build</p>
+        <p className="gauge-label">What I said would kill this, before I built it</p>
 
         {/* The comparison the criterion turns on, as two readouts rather than
             as a sentence with the numbers buried in it. Required against
@@ -175,28 +175,28 @@ export function CycleTimePanel({ data }: { data: SiteData }) {
             <div className="readout readout-md text-ink-muted">
               {data.kill_threshold_pct}%
             </div>
-            <p className="gauge-label mt-1">required</p>
+            <p className="gauge-label mt-1">it had to save</p>
           </div>
           <div>
             <div className="readout readout-md text-warn">{extraction}%</div>
-            <p className="gauge-label mt-1">extraction delivers</p>
+            <p className="gauge-label mt-1">AI actually saves</p>
           </div>
           <div>
             <div className="readout readout-md text-ink">
               {decomposition.internal_touch_share_pct}%
             </div>
-            <p className="gauge-label mt-1">someone actually working</p>
+            <p className="gauge-label mt-1">all the work there is</p>
           </div>
         </div>
 
         <p className="mt-4 text-sm leading-relaxed text-ink-muted">
           {fires ? (
             <>
-              <span className="font-semibold text-ink">The criterion fires.</span>{' '}
-              No level of extraction accuracy turns these days into hours.
+              <span className="font-bold text-ink-strong">So it dies.</span>{' '}
+              However good the AI reading gets, these days do not become hours.
             </>
           ) : (
-            <span className="font-semibold text-ink">The criterion holds.</span>
+            <span className="font-bold text-ink-strong">So it survives.</span>
           )}
         </p>
       </div>
@@ -206,16 +206,16 @@ export function CycleTimePanel({ data }: { data: SiteData }) {
           most favour extraction and the result is shown either way. */}
       <div className="border-t border-line px-5 py-4">
         <p className="gauge-label">
-          Does it hold if the assumptions are wrong?
+          What if my timings are wrong?
         </p>
         <div className="mt-2.5 overflow-x-auto">
           <table className="w-full min-w-[30rem] text-sm">
             <thead>
               <tr className="text-left text-xs text-ink-faint">
-                <th className="pb-1.5 font-medium">Scenario</th>
-                <th className="pb-1.5 text-right font-medium">External</th>
-                <th className="pb-1.5 text-right font-medium">Extraction</th>
-                <th className="pb-1.5 text-right font-medium">Rule engine</th>
+                <th className="pb-1.5 font-medium">If...</th>
+                <th className="pb-1.5 text-right font-medium">Waiting</th>
+                <th className="pb-1.5 text-right font-medium">AI saves</th>
+                <th className="pb-1.5 text-right font-medium">Checklist saves</th>
               </tr>
             </thead>
             <tbody>
@@ -237,10 +237,10 @@ export function CycleTimePanel({ data }: { data: SiteData }) {
           </table>
         </div>
         <p className="mt-2.5 text-xs leading-relaxed text-ink-subtle">
-          Extraction never overtakes the rule engine, at any assumption I can
-          defend. Step durations are plausible rather than observed. They are
-          the first thing worth pushing on, which is why the table shows the
-          conclusion surviving them being wrong.
+          Even if carriers were four times faster than they are, the AI still
+          saves less than the checklist. My step timings are plausible rather
+          than observed, and they are the first thing worth arguing with, which
+          is why the table shows the answer holding up when they are wrong.
         </p>
       </div>
     </section>

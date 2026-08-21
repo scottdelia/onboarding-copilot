@@ -52,21 +52,21 @@
   },
   "sensitivity": [
     {
-      "scenario": "as modelled",
+      "scenario": "my timings are right",
       "external_wait_share_pct": 93.9,
       "extraction_pct": 0.1,
       "rule_engine_pct": 2.2,
       "extraction_wins": false
     },
     {
-      "scenario": "carrier queues halved",
+      "scenario": "carriers were twice as fast",
       "external_wait_share_pct": 88.5,
       "extraction_pct": 0.3,
       "rule_engine_pct": 4.1,
       "extraction_wins": false
     },
     {
-      "scenario": "carrier queues at 25%",
+      "scenario": "carriers were four times as fast",
       "external_wait_share_pct": 71.5,
       "extraction_pct": 0.5,
       "rule_engine_pct": 7.2,
